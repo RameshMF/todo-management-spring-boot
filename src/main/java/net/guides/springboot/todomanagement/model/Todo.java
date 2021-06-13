@@ -8,9 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "todos")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Todo {
 
 	@Id
@@ -24,46 +32,4 @@ public class Todo {
 
 	private Date targetDate;
 	
-	public Todo() {
-		super();
-	}
-
-	public Todo(String user, String desc, Date targetDate, boolean isDone) {
-		super();
-		this.userName = user;
-		this.description = desc;
-		this.targetDate = targetDate;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Date getTargetDate() {
-		return targetDate;
-	}
-
-	public void setTargetDate(Date targetDate) {
-		this.targetDate = targetDate;
-	}
 }
